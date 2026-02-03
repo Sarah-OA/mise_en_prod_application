@@ -2,6 +2,7 @@
 Prediction de la survie d'un individu sur le Titanic
 """
 
+import logging
 import os
 from dotenv import load_dotenv
 import argparse
@@ -16,6 +17,18 @@ from train_evaluate import evaluate_model
 
 
 # ENVIRONMENT CONFIGURATION ---------------------------
+
+logging.basicConfig(
+    format="{asctime} - {levelname} - {message}",
+    style="{",
+    datefmt="%Y-%m-%d %H:%M",
+    level=logging.DEBUG,
+    handlers=[
+        logging.FileHandler("recording.log"),
+        logging.StreamHandler()
+    ]
+)
+
 
 load_dotenv()
 
@@ -33,9 +46,9 @@ MAX_DEPTH = None
 MAX_FEATURES = "sqrt"
 
 if jeton_api.startswith("$"):
-    print("API token has been configured properly")
+    logging.info("API token has been configured properly")
 else:
-    print("API token has not been configured")
+    logging.warning("API token has not been configured")
 
 
 # FUNCTIONS --------------------------
@@ -65,6 +78,7 @@ pipe = create_pipeline(
 pipe.fit(X_train, y_train)
 score, matrix = evaluate_model(pipe, X_test, y_test)
 
+logging.info("matrice de confusion")
 print(f"{score:.1%} de bonnes réponses sur les données de test pour validation")
 print(20 * "-")
 print("matrice de confusion")

@@ -1,1 +1,0 @@
-Installer les packages de requirements.txt
