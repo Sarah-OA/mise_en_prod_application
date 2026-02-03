@@ -8,9 +8,11 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier
 import time
 import os
+import seaborn as sns
 
-os.chdir('/home/coder/work/ensae-reproductibilite-application')
+os.chdir('/home/onyxia/mise_en_prod_application')
 TrainingData = pd.read_csv('data.csv')
+
 
 TrainingData.head()
 
