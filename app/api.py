@@ -29,10 +29,10 @@ def show_welcome_page():
 
 @app.get("/predict", tags=["Predict"])
 async def predict(
-    sex: str = "female",
-    age: float = 29.0,
-    fare: float = 16.5,
-    embarked: str = "S"
+    sex: str,
+    age: float,
+    fare: float,
+    embarked: str
 ) -> str:
     """
     """

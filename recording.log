@@ -1,0 +1,6 @@
+2026-03-10 10:25:41.601 | WARNING  | __main__:<module>:43 - API token has not been configured
+2026-03-10 10:25:41.808 | SUCCESS  | __main__:<module>:82 - 83.3% de bonnes réponses sur les données de test pour validation
+2026-03-10 10:25:41.808 | DEBUG    | __main__:<module>:83 - --------------------
+2026-03-10 10:25:41.808 | INFO     | __main__:<module>:84 - Matrice de confusion
+2026-03-10 10:25:41.808 | DEBUG    | __main__:<module>:85 - [[51  5]
+ [10 24]]
