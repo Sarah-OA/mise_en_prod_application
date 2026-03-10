@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM python:3.12-slim-bookworm
 
 # Install Python
 RUN apt-get -y update && \
@@ -6,7 +6,7 @@ RUN apt-get -y update && \
 
 # Install project dependencies
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN uv add -r requirements.txt
 
 COPY train.py .
 COPY src ./src
