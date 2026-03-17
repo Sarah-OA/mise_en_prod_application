@@ -47,9 +47,7 @@ def check_data_leakage(
     variable: str,
 ):
 
-    if set(train_dataset[variable].dropna().unique()) - set(
-        test_dataset[variable].dropna().unique()
-    ):
+    if set(train_dataset[variable].dropna().unique()) - set(test_dataset[variable].dropna().unique()):
         logging.error(
             f"Problème de data leakage pour la variable {variable}"
         )
