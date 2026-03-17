@@ -20,13 +20,9 @@ def check_name_formatting(
     bad = connection.sql(query).fetchone()[0]
 
     if bad == 0:
-<<<<<<< HEAD
         logging.info(
             "Test OK: colonne 'Name' se découpe toujours en 2 parties avec ','"
         )
-=======
-        logging.info("Test OK: colonne 'Name' se découpe toujours en 2 parties avec ','")
->>>>>>> f22b5fd2a9a0f16709dbff80e836022fb0d64fad
     else:
         logging.warn(
             f"Problème dans la colonne Name: {bad} ne se décomposent pas en 2 parties."
@@ -56,16 +52,6 @@ def check_data_leakage(
     if set(train_dataset[variable].dropna().unique()) - set(
         test_dataset[variable].dropna().unique()
     ):
-<<<<<<< HEAD
         logging.error(f"Problème de data leakage pour la variable {variable}")
     else:
         logging.info(f"Pas de problème de data leakage pour la variable {variable}")
-=======
-        logging.error(
-            f"Problème de data leakage pour la variable {variable}"
-        )
-    else:
-        logging.info(
-            f"Pas de problème de data leakage pour la variable {variable}"
-        )
->>>>>>> f22b5fd2a9a0f16709dbff80e836022fb0d64fad
