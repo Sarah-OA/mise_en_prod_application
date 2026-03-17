@@ -1,3 +1,4 @@
+#| filename: "deployment/deployment.yaml"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,3 +20,9 @@ spec:
         image: sarahoa/mise_en_prod_application:latest
         ports:
         - containerPort: 8000
+        env:
+        - name: JETON_API
+          valueFrom:
+            secretKeyRef:
+              name: api-jeton
+              key: JETON_API
