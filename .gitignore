@@ -2,5 +2,9 @@ config.yaml
 __pycache__/
 .env
 *.log
+<<<<<<< HEAD
 data/
 model.skops
+=======
+data/
+>>>>>>> f22b5fd2a9a0f16709dbff80e836022fb0d64fad
